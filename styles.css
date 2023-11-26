@@ -65,6 +65,7 @@
   .services,
   .skills,
   .projects,
+  .certificate,
   .contact,
   footer {
     font-family: "Poppins", sans-serif;
@@ -346,18 +347,21 @@
   
   /*  Service  */
   .services,
-  .projects {
+  .projects,
+  .certificate {
     color: #fff;
     background: #111;
   }
   
   .services .title::before,
-  .projects .title::before {
+  .projects .title::before,
+  .certificate .title::before {
     background: #fff;
   }
   
   .services .title::after,
-  .projects .title::after {
+  .projects .title::after,
+  .certificate .title::after {
     background: #111;
     content: "What I Provide ?";
   }
@@ -518,10 +522,62 @@
   }
   
 
+
   
+  /*  certificate  */
+  .certificate .title::after {
+    content: "What I Achived ?";
+  }
+  
+  .certificate .carousel .card {
+    background: #222;
+    border-radius: 6px;
+    padding: 25px 35px;
+    text-align: center;
+    overflow: hidden;
+    transition: all 0.3s ease;
+  }
+  
+  .certificate .carousel .card:hover {
+    background: #1e3551;
+  }
+  
+  .certificate .carousel .card .box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+  }
+  
+  .certificate .carousel .card:hover .box {
+    transform: scale(1.05);
+  }
+  
+  .certificate .carousel .card .text {
+    font-size: 25px;
+    font-weight: 500;
+    margin: 10px 0 7px 0;
+  }
+  
+  .certificate .carousel .card img {
+    height: 150px;
+    width: 150px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 5px solid #888c8d;
+    transition: all 0.3s ease;
+  }
+  
+  .certificate .carousel .card:hover img {
+    border-color: #fff;
+  }
+  
+
+
   /*  Projects  */
   .projects .title::after {
-    content: "What I Achived ?";
+    content: "What I Created ?";
   }
   
   .projects .carousel .card {
@@ -567,7 +623,10 @@
   .projects .carousel .card:hover img {
     border-color: #fff;
   }
-  
+
+
+
+
   .owl-dots {
     text-align: center;
     margin-top: 20px;
