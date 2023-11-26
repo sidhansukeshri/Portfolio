@@ -1,13 +1,11 @@
 $(document).ready(function () {
     $(window).scroll(function () {
-        // Sticky navbar on scroll script
         if (this.scrollY > 20) {
             $(".navbar").addClass("sticky");
         } else {
             $(".navbar").removeClass("sticky");
         }
 
-        // Scroll-up button show/hide script
         if (this.scrollY > 500) {
             $(".scroll-up-btn").addClass("show");
         } else {
@@ -15,25 +13,20 @@ $(document).ready(function () {
         }
     });
 
-    // Slide-up script
     $(".scroll-up-btn").click(function () {
         $("html").animate({ scrollTop: 0 });
-        // Removing smooth scroll on slide-up button click
         $("html").css("scrollBehavior", "auto");
     });
 
     $(".navbar .menu li a").click(function () {
-        // Smooth scroll on Menu Items click
         $("html").css("scrollBehavior", "smooth");
     });
 
-    // Toggle Navbar
     $(".menu-btn").click(function () {
         $(".navbar .menu").toggleClass("active");
         $(".menu-btn i").toggleClass("active");
     });
 
-    // Typing Text Animation
     var typed = new Typed(".typing", {
         strings: [
             "Intrapreneur",
@@ -60,7 +53,6 @@ $(document).ready(function () {
         loop: true,
     });
 
-    // Owl Carousel
     $(".carousel").owlCarousel({
         margin: 20,
         loop: true,
@@ -83,7 +75,6 @@ $(document).ready(function () {
         },
     });
 
-    // Form Submission
     $("#contactForm").submit(function (event) {
         event.preventDefault();
 
@@ -99,13 +90,12 @@ $(document).ready(function () {
             message: message,
         };
 
-        // Send the formData to the server using an AJAX request
         $.ajax({
-            url: "contact.php", // Replace with your server-side script
+            url: "send_email.php", // Replace with your server-side script
             type: "POST",
             data: formData,
             success: function (response) {
-                console.log(response); // Handle the server's response here
+                $("#statusMessage").html(response);
             },
             error: function (error) {
                 console.error("Error sending the message: " + error);
