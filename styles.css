@@ -721,7 +721,7 @@
   
   .social-menu ul {
     position: absolute;
-    left: 20%;
+    left: 50%;
     padding: 0;
     margin: 0;
     transform: translate(-50%, -50%);
@@ -730,7 +730,8 @@
   
   .social-menu ul li {
     list-style: none;
-    margin: 0 15px;
+    margin: 0 25px;
+    padding-top: 20px;
   }
   
   .social-menu ul li .fa {
@@ -959,3 +960,8 @@
     border: 5px solid #888c8d;
     transition: all 0.3s ease;
   }
+
+
+.fa-location-dot:before, .fa-map-marker-alt:before {
+    padding-right: 7px;
+}
